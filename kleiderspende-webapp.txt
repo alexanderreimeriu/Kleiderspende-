@@ -1,0 +1,13 @@
+kleiderspende-webapp/
+├── index.html
+├── donate.html
+├── contact.html
+├── about.html
+├── README.md
+├── css/
+│   └── styles.css
+├── js/
+│   └── main.js
+└── assets/
+    ├── logo.png
+    └── (weitere Bilder, z. B. banner.jpg)

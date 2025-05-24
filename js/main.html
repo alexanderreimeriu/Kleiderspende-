@@ -1,0 +1,40 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("spendenForm");
+  const uebergabe = document.getElementById("uebergabeArt");
+  const adresseContainer = document.getElementById("adresseContainer");
+
+  function toggleAdresse() {
+    if (uebergabe.value === "abholung") {
+      adresseContainer.style.display = "block";
+    } else {
+      adresseContainer.style.display = "none";
+    }
+  }
+
+  uebergabe.addEventListener("change", toggleAdresse);
+  toggleAdresse();
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const kleidung = form.kleidung.value;
+    const region = form.region.value;
+    const art = form.uebergabe.value;
+    const adresse = form.adresse.value;
+
+    if (art === "abholung") {
+      const plz = adresse.match(/\d{5}/);
+      if (!plz || plz[0].substring(0, 2) !== "12") {
+        alert("Abholadresse muss in der Nähe (PLZ beginnt mit 12) liegen.");
+        return;
+      }
+    }
+
+    const datum = new Date().toLocaleDateString();
+    const uhrzeit = new Date().toLocaleTimeString();
+    document.getElementById("erfolgMsg").innerText =
+      `Spende erfolgreich registriert: ${kleidung}, ${region}, ${datum}, ${uhrzeit}, ${art === "abholung" ? adresse : "Übergabe an Geschäftsstelle"}`;
+
+    form.reset();
+    toggleAdresse();
+  });
+});

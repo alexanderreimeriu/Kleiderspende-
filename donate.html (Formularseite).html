@@ -3,48 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spende registrieren</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Kleiderspende – Formular</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <header class="bg-light p-3">
-    <div class="container">
-      <h1 class="text-center">Spende registrieren</h1>
-    </div>
+  <header class="container py-4">
+    <h1 class="text-center">Kleiderspende</h1>
+    <nav class="nav justify-content-center">
+      <a class="nav-link" href="index.html">Start</a>
+      <a class="nav-link active" href="donate.html">Spenden</a>
+      <a class="nav-link" href="about.html">Info</a>
+      <a class="nav-link" href="contact.html">Kontakt</a>
+    </nav>
   </header>
-  <main class="container my-4">
+  <main class="container">
+    <h2 class="text-center">Spende registrieren</h2>
     <form id="spendenForm">
       <div class="mb-3">
-        <label for="inputName" class="form-label">Name*</label>
-        <input type="text" class="form-control" id="inputName" name="name" required>
-      </div>
-      <div class="mb-3">
-        <label for="inputEmail" class="form-label">E-Mail*</label>
-        <input type="email" class="form-control" id="inputEmail" name="email" required>
-      </div>
-      <div class="mb-3">
-        <label for="selectArt" class="form-label">Art der Kleidung</label>
-        <select class="form-select" id="selectArt" name="art">
-          <option>Kleidung für Erwachsene</option>
-          <option>Kinderkleidung</option>
-          <option>Schuhe</option>
-          <option>Accessoires</option>
+        <label class="form-label">Art der Kleidung*</label>
+        <select class="form-select" name="kleidung" required>
+          <option>Jacken</option>
+          <option>Hosen</option>
+          <option>Shirts</option>
         </select>
       </div>
       <div class="mb-3">
-        <label for="inputPLZ" class="form-label">Postleitzahl (nur bei Abholung)</label>
-        <input type="text" class="form-control" id="inputPLZ" name="plz">
+        <label class="form-label">Krisengebiet*</label>
+        <select class="form-select" name="region" required>
+          <option>Ukraine</option>
+          <option>Gaza</option>
+          <option>Syrien</option>
+        </select>
       </div>
-      <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" value="1" id="abholung" name="abholung">
-        <label class="form-check-label" for="abholung">
-          Abholung gewünscht
-        </label>
+      <div class="mb-3">
+        <label class="form-label">Art der Übergabe*</label>
+        <select class="form-select" id="uebergabeArt" name="uebergabe" required>
+          <option value="abholung">Abholung</option>
+          <option value="geschaeftsstelle">Übergabe an Geschäftsstelle</option>
+        </select>
       </div>
-      <button type="submit" class="btn btn-success">Spende absenden</button>
+      <div class="mb-3" id="adresseContainer">
+        <label class="form-label">Abholadresse*</label>
+        <input type="text" class="form-control" name="adresse" id="adresse">
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Spende abschicken</button>
+      </div>
+      <div id="erfolgMsg" class="text-success"></div>
     </form>
-    <p class="mt-3 text-success" id="erfolgMsg"></p>
   </main>
   <script src="js/main.js"></script>
 </body>

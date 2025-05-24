@@ -3,25 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt – Kleiderspende</title>
+  <title>Kleiderspende – Kontakt</title>
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <header class="container py-4 text-center">
-    <img src="assets/logo.png" alt="Logo Kleiderspende" class="logo mb-3">
-    <h1>Kleiderspende</h1>
-    <nav class="nav justify-content-center">
+  <header class="container text-center py-3">
+    <img src="assets/logo.png" alt="Kleiderspende Logo" class="logo">
+    <nav class="nav justify-content-center mt-2">
       <a class="nav-link" href="index.html">Start</a>
       <a class="nav-link" href="donate.html">Spenden</a>
       <a class="nav-link" href="about.html">Info</a>
       <a class="nav-link active" href="contact.html">Kontakt</a>
     </nav>
   </header>
+
   <main class="container">
-    <h2>Kontakt</h2>
-    <p>Fragen? Schreib uns an kontakt@kleiderspende.de</p>
+    <h2 class="text-center">Kontakt</h2>
+    <p class="text-center">Wenn Du Fragen hast, kannst Du uns gerne kontaktieren:</p>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">E-Mail-Adresse</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <div class="mb-3">
+            <label for="nachricht" class="form-label">Nachricht</label>
+            <textarea class="form-control" id="nachricht" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Absenden</button>
+        </form>
+      </div>
+    </div>
   </main>
+
   <footer class="text-center py-4">
     <p>&copy; 2025 Kleiderspende e. V. – <a href="#">Impressum</a></p>
   </footer>
